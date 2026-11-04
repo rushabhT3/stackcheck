@@ -26,6 +26,7 @@ Paste a project's RERA report links, press Check, get a report where every findi
 - **Money vs progress** — spending running ahead of work done
 - **Arithmetic** — cumulative figures that don't add up across quarters
 - **Missing evidence** — claims with no photo or money to check them against
+- **Video vs filing** — your own site video against the claimed slabs
 
 The demo moment: a red card says "gap found", the builder's own photo shows numbered floor rows drawn by StackCheck, and the card links to the filing page with the claim. When the evidence isn't clear, StackCheck says "can't verify" instead of guessing, and the agent trace shows every step it tried.
 
@@ -57,7 +58,7 @@ graph LR
     Ingest --> Photos[Photos + date stamps]
     Photos --> SAM[SAM 3.1<br/>floor rows]
     Photos --> VC[Vision count<br/>must agree]
-    Facts --> Rules[Rules R1-R8<br/>deterministic]
+    Facts --> Rules[Rules R1-R9<br/>deterministic]
     SAM --> Rules
     VC --> Rules
     Rules --> Agent[Investigator agent<br/>max 3 steps]
@@ -88,7 +89,7 @@ Full table in `docs/kpi_snapshot.md`, refreshed by `scripts/kpi_report.py`:
 - Photo facts: kind right on 29/30 photos (96.7%), storey counts 5/5; no unambiguous date-stamp case, so that score is no-data by design.
 - Floor counting on 25 openly licensed benchmark photos: 48% confident counts (100% within 1 floor, 0% confidently wrong), 24% estimates, 28% can't-tell.
 - Providers on the same filings: Meta 98.2% at $0.0015/filing, Baseten 99.1% at $0.0454, Fireworks 99.1% at $0.0547 — Meta stays the default.
-- Cost per project check: at most $0.2750 observed.
+- Cost per project check: fresh 3-filing check on Project E, $0.4073, under 3 minutes.
 
 ## Run it yourself
 
@@ -103,7 +104,7 @@ Then `cd web && npm install && npm run dev`. Needs keys in `.env` for the provid
 ## Features
 
 - [x] Check a project from public RERA PDF links, end to end
-- [x] Rules R1–R8 with page/photo/computation evidence on every finding
+- [x] Rules R1–R9 with page/photo/computation evidence on every finding
 - [x] "Can't verify" abstention plus investigator agent trace
 - [x] Accuracy page showing the measured eval numbers
 - [x] Disk cache + cost ledger on every model call
@@ -118,8 +119,6 @@ Then `cd web && npm install && npm run dev`. Needs keys in `.env` for the provid
 
 ## What's next
 
-- Hand-verify the first real FLAG and publish it as a sample report.
-- Run the first real multi-quarter project end to end.
 - Measure investigator-agent recovery on real buildings.
 - Try other states' RERA formats beyond Bihar.
 
@@ -135,3 +134,7 @@ Then `cd web && npm install && npm run dev`. Needs keys in `.env` for the provid
 - Live demo: https://rushabhtrivedi03--stackcheck-web.us-east.modal.run
 - Measured KPIs: `docs/kpi_snapshot.md`
 - Benchmark attribution: `data/bench/ATTRIBUTION.md`
+
+## License
+
+AGPL-3.0-or-later, see LICENSE.
