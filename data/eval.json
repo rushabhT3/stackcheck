@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-02",
+  "floors": {
+    "status": "measured",
+    "n": 25,
+    "exact": {
+      "value": 0.8333333333333334,
+      "n": 12,
+      "method": "Share of confident counts exactly equal to the reference count."
+    },
+    "within1": {
+      "value": 1.0,
+      "n": 12,
+      "method": "Share of decided counts within one floor of the reference count."
+    },
+    "abstain": {
+      "value": 0.28,
+      "n": 25,
+      "method": "Share of labelled photos with no usable count (can't tell). Estimates count as answered."
+    },
+    "wrong_when_confident": {
+      "value": 0.0,
+      "n": 12,
+      "method": "Share of confident counts 2+ floors off."
+    },
+    "tiers": {
+      "confident": {
+        "value": 0.48,
+        "n": 25,
+        "method": "Share of labelled photos with a confident count."
+      },
+      "estimate": {
+        "value": 0.24,
+        "n": 25,
+        "method": "Share of labelled photos with an estimate only."
+      },
+      "cant_tell": {
+        "value": 0.28,
+        "n": 25,
+        "method": "Share of labelled photos with no usable count."
+      }
+    },
+    "reference": {
+      "kind": "ai",
+      "note": "Floor counts were read from each photo by Claude, an AI model used as a second reader. A person has not checked them yet."
+    },
+    "disagreements": null
+  },
+  "floors_video": {
+    "status": "measured",
+    "n": 3,
+    "within1": {
+      "value": 0.6666666666666666,
+      "n": 3,
+      "method": "Share of referenced videos with a range gap of at most one floor from the public record. References come from public records, not a person recount."
+    },
+    "videos": [
+      {
+        "id": "V06",
+        "off_by": 0,
+        "bench_low": 17,
+        "bench_high": 18,
+        "reference": 17,
+        "source": null
+      },
+      {
+        "id": "V07",
+        "off_by": 5,
+        "bench_low": 30,
+        "bench_high": 30,
+        "reference": 25,
+        "source": "Wikipedia: Torre Insignia (25 floors)"
+      },
+      {
+        "id": "V08",
+        "off_by": 1,
+        "bench_low": 7,
+        "bench_high": 8,
+        "reference": [
+          9,
+          10
+        ],
+        "source": "Flow Building award page (9 to 10 above ground)"
+      }
+    ]
+  },
+  "extraction": {
+    "status": "not measured yet",
+    "reason": "no reference counts paired with extracted filings",
+    "n_docs": 0,
+    "fields": {
+      "quarter_end": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      },
+      "filed_on": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      },
+      "slabs": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      },
+      "cumulative_received": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      },
+      "cumulative_spent": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      },
+      "estimated_cost": {
+        "value": null,
+        "n": 0,
+        "method": "No paired reference counts."
+      }
+    }
+  },
+  "flags": {
+    "status": "measured",
+    "n_rows": 8,
+    "skipped_rows": 0,
+    "rules": {
+      "R4_CLAIM_REGRESSION": {
+        "true": 2,
+        "false": 5,
+        "unclear": 0,
+        "precision": {
+          "value": 0.2857142857142857,
+          "n": 7,
+          "method": "Reviewer true flags over true+false; unclear kept out of the denominator."
+        }
+      },
+      "R7_ARITHMETIC": {
+        "true": 0,
+        "false": 1,
+        "unclear": 0,
+        "precision": {
+          "value": 0.0,
+          "n": 1,
+          "method": "Reviewer true flags over true+false; unclear kept out of the denominator."
+        }
+      }
+    },
+    "reviewer_note": "Mar 2025 p6 item 9 reads 100%. The reader returned 70. Reviewer is a person-checked read of the PDF pages, not a model.",
+    "reviewed_on": "2026-11-02"
+  },
+  "backtest": {
+    "status": "not measured yet",
+    "reason": "no backtest.csv",
+    "projects": []
+  }
+}

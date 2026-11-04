@@ -1,0 +1,111 @@
+{
+  "doc_id": "b22e965724dc6f43",
+  "project_reg_no": null,
+  "project_name": null,
+  "promoter_name": null,
+  "state": null,
+  "quarter_end": "2025-03-31",
+  "filed_on": "2025-04-13",
+  "blocks": [
+    {
+      "block_label": "MAIN",
+      "floors_above_ground_sanctioned": 4,
+      "slabs_claimed_count": 3,
+      "slabs_claimed_percent": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    }
+  ],
+  "activities": [
+    {
+      "name": "Excavation (if any)",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Plinth",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    }
+  ],
+  "financials": {
+    "received_this_quarter": "0",
+    "spent_this_quarter": "1778000",
+    "cumulative_received": "779100",
+    "cumulative_spent": "10105126",
+    "estimated_total_cost": "38561456",
+    "currency_unit": "INR",
+    "ref": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    }
+  },
+  "has_architect_certificate": true,
+  "has_engineer_certificate": true,
+  "has_ca_certificate": true,
+  "photo_section_present": true,
+  "notes": [
+    "Cumulative expenditure till end of quarter is shown as 1778000 on page 6 item 10 but total expenditure till date is shown as 10105126 on same page item 8.",
+    "Amount received during quarter is 0 but cumulative fund collected is 779100 with cumulative expenditure 1778000.",
+    "Slabs of super structure reported as Three (3) without % sign while other construction items use percentages.",
+    "CA annexure lists total estimated cost 20825943 which differs from Form X estimated cost 38561456."
+  ],
+  "refs": {
+    "project_reg_no": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "project_name": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "promoter_name": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "quarter_end": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "filed_on": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 8
+    },
+    "blocks": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "activities": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "financials": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    },
+    "has_architect_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 14
+    },
+    "has_engineer_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 17
+    },
+    "has_ca_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 20
+    },
+    "photo_section_present": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    }
+  }
+}

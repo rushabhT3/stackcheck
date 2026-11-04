@@ -1,0 +1,4 @@
+project_label,rule,reviewer_verdict,quarter_end,reviewer_note,reviewed_on
+Project E,R4_CLAIM_REGRESSION,false,2024-12-31,person-checked read of the PDF pages: staircases 30% (Sept 2024 Block B-2 page 6) vs 10% (Dec 2024 Block E page 9) are different blocks,2026-11-02
+Project E,R4_CLAIM_REGRESSION,false,2025-03-31,person-checked read of the PDF pages: Block B-2 page 6 item 9 reads 100% not 70% (70 is item 11 below),2026-11-02
+Project E,R4_CLAIM_REGRESSION,true,2025-03-31,person-checked read of the PDF pages: Block C item 14 staircases 45% (Dec 2024 page 7) vs 40% (Mar 2025 page 7),2026-11-02

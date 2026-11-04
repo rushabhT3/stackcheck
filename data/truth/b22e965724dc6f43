@@ -1,0 +1,207 @@
+{
+  "doc_id": "b22e965724dc6f43",
+  "project_reg_no": null,
+  "project_name": null,
+  "promoter_name": null,
+  "state": null,
+  "quarter_end": "2025-03-31",
+  "filed_on": "2025-04-13",
+  "blocks": [
+    {
+      "block_label": "MAIN",
+      "floors_above_ground_sanctioned": 4,
+      "slabs_claimed_count": 3,
+      "slabs_claimed_percent": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    }
+  ],
+  "activities": [
+    {
+      "name": "Excavation (if any)",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Basements (if any)",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Podiums (if any)",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Plinth",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Stilt Floor",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Slabs of Super Structure",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Internal walls, Internal Plaster, Floorings, Doors and Windows within Flats /Premises",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Sanitary Fittings within the Flat/Premises, Electrical Fittings within the Flat/Premises",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Staircases",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "Lifts Wells and Lobbies at each Floor level",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "Overhead and Underground Water Tanks",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "External plumbing and external plaster, elevation, completion of terraces with waterproofing of the Building/Wing",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "Installation of Lifts, water pumps, Fire Fighting Fittings and Equipment as per CFO NOC, Electrical fittings, Mechanical Equipment, compliance to conditions of environment/CRZ NOC, Finishing to entrance lobby/s, plinth protection, paving of areas appurtenant to Building/Wing, Compound Wall and all other requirements as may be required to complete project as per Specifications in Agreement of Sale",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "Any other activities",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    }
+  ],
+  "financials": {
+    "received_this_quarter": "0",
+    "spent_this_quarter": "1778000",
+    "cumulative_received": "779100",
+    "cumulative_spent": "10105126",
+    "estimated_total_cost": "38561456",
+    "currency_unit": "INR",
+    "ref": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    }
+  },
+  "has_architect_certificate": true,
+  "has_engineer_certificate": true,
+  "has_ca_certificate": true,
+  "photo_section_present": true,
+  "notes": [
+    "Cumulative expenditure till end of quarter is shown as 1778000 on page 6 item 10 but total expenditure till date is shown as 10105126 on same page item 8; truth uses item 8 as cumulative spent.",
+    "Amount received during quarter is 0 but cumulative fund collected is 779100 with cumulative expenditure 1778000.",
+    "Slabs of super structure reported as Three (3) without % sign while other construction items use percentages; truth records the count and leaves the percent null.",
+    "CA annexure lists total estimated cost 20825943 which differs from Form X estimated cost 38561456; truth uses Form X."
+  ],
+  "refs": {
+    "activities": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "blocks": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "filed_on": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 8
+    },
+    "financials": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    },
+    "has_architect_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 14
+    },
+    "has_ca_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 20
+    },
+    "has_engineer_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 17
+    },
+    "photo_section_present": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    },
+    "project_name": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "project_reg_no": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "promoter_name": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "quarter_end": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "doc_id": "9e8986359a068fdb",
+  "project_reg_no": null,
+  "project_name": null,
+  "promoter_name": null,
+  "state": null,
+  "quarter_end": "2022-12-31",
+  "filed_on": null,
+  "blocks": [
+    {
+      "block_label": "MAIN",
+      "floors_above_ground_sanctioned": null,
+      "slabs_claimed_count": null,
+      "slabs_claimed_percent": 40.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    }
+  ],
+  "activities": [
+    {
+      "name": "Excavation",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Raft Works",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Basements (if any)",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Podiums (if any)",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Plinth",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Stilt Floor",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Slabs of Super Structure",
+      "percent_done": 40.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Internal walls, Internal Plaster, Floorings, Doors and Windows within Flats /Premises.",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Sanitary Fittings within the Flat/Premises, Electrical Fittings within the Flat/Premises",
+      "percent_done": 30.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Staircases, Lifts Wells and Lobbies at each Floor level, Overhead and Underground Water Tanks.",
+      "percent_done": 20.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "External plumbing and external plaster, elevation, completion of terraces with waterproofing of the Building/Wing.",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    },
+    {
+      "name": "Installation of Lifts, water pumps, Fire Fighting Fittings and Equipment as per CFO NOC, Electrical fittings, Mechanical Equipment, compliance to conditions of environment/CRZ NOC, Finishing to entrance lobby/s, plinth protection, paving of areas appurtenant to Building/Wing, Compound Wall and all other requirements as my be required to complete project as per specifications in Agreement of Sale.",
+      "percent_done": 22.0,
+      "ref": {
+        "doc_id": "9e8986359a068fdb",
+        "page": 3
+      }
+    }
+  ],
+  "financials": {
+    "received_this_quarter": "835424.39",
+    "spent_this_quarter": "6355085.68",
+    "cumulative_received": "34803007.0",
+    "cumulative_spent": "34119473.7",
+    "estimated_total_cost": "1234.0",
+    "currency_unit": "INR",
+    "ref": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 5
+    }
+  },
+  "has_architect_certificate": null,
+  "has_engineer_certificate": null,
+  "has_ca_certificate": null,
+  "photo_section_present": true,
+  "notes": [
+    "Estimated cost row states '(In Lakh)' while financial table heading states 'Amount (in Rs.)', unit mismatch.",
+    "Net amount at end of Quarter 835424.39 equals Amount received during the Quarter 835424.39.",
+    "Cumulative expenditure 34119473.70 equals Total expenditure on Project till date 34119473.70.",
+    "Actual Cost Incurred during Quarter 6355085.68 exceeds Amount received during Quarter 835424.39.",
+    "Sold/booked inventory shows 'Booked/ Alloted - 18' without allocation to apartment types."
+  ],
+  "refs": {
+    "project_reg_no": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 1
+    },
+    "project_name": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 1
+    },
+    "promoter_name": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 1
+    },
+    "quarter_end": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 1
+    },
+    "blocks": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 3
+    },
+    "activities": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 3
+    },
+    "financials": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 5
+    },
+    "photo_section_present": {
+      "doc_id": "9e8986359a068fdb",
+      "page": 4
+    }
+  }
+}

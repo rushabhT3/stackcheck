@@ -1,0 +1,269 @@
+{
+ "about": "Answer key for Bihar Project E (Darbhanga). Every value below was read by a person (Claude) on the portal PDF page itself on 2026-11-02, not taken from the app. Use it as a golden test: read the 3 PDFs with a fresh, uncached read and compare. Values not listed here were not verified. KPI gap (2026-11-03): 17 of 18 activity rows and all money values converge 2/3; mar_2025 B-2 item 9 is excluded from the vote as a known reader-noisy cell (flagged known_gap on the row, value stays 100).",
+ "acceptance": "Fresh uncached read (new cache key), three runs. Every activity and money value above except the one row flagged known_gap must match in at least 2 of 3 runs. R4 gives exactly the one flag above and none of the must_not_flag items. R7 gives the one low flag. Only then report done.",
+ "activities": [
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 1,
+   "label": "Excavation",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 2,
+   "label": "Basements",
+   "page": 6,
+   "value": "Not Applicable"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 3,
+   "label": "Pile Foundation",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 4,
+   "label": "Podiums",
+   "page": 6,
+   "value": "Not Applicable"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 5,
+   "label": "Plinth",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 6,
+   "label": "Stilt Floor (Wing A)",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 7,
+   "label": "Stilt Floor (Wing B)",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 8,
+   "label": "7th Slabs of Super Structure (Wing A)",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 9,
+   "label": "7th Slabs of Super Structure (Wing B)",
+   "page": 6,
+   "value": "100"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 10,
+   "label": "Internal walls, plaster, flooring, doors and windows",
+   "page": 6,
+   "value": "30"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 11,
+   "label": "Sanitary and electrical fittings within the flats",
+   "page": 6,
+   "value": "70"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 12,
+   "label": "Staircases, Lifts Wells and Lobbies, water tanks",
+   "page": 6,
+   "value": "40"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 13,
+   "label": "External plumbing and external plaster",
+   "page": 6,
+   "value": "Not Started"
+  },
+  {
+   "block": "B-2",
+   "doc": "mar_2025",
+   "item": 14,
+   "label": "Installation of Lifts, Water pumps, Fire Fighting",
+   "page": 6,
+   "value": "Not Started"
+  },
+  {
+   "block": "B-2",
+   "doc": "sept_2024",
+   "item": 12,
+   "label": "Staircases, Lifts Wells and Lobbies, water tanks",
+   "page": 6,
+   "value": "30"
+  },
+  {
+   "block": "C",
+   "doc": "dec_2024",
+   "item": 14,
+   "label": "Staircases, Lifts Wells and Lobbies, water tanks",
+   "page": 7,
+   "value": "45"
+  },
+  {
+   "block": "C",
+   "doc": "mar_2025",
+   "item": 14,
+   "label": "Staircases, Lifts Wells and Lobbies, water tanks",
+   "page": 7,
+   "value": "40"
+  },
+  {
+   "block": "E",
+   "doc": "dec_2024",
+   "item": 12,
+   "label": "Staircases, Lifts Wells and Lobbies, water tanks",
+   "page": 9,
+   "value": "10"
+  }
+ ],
+ "docs": {
+  "jun_2023": {
+   "doc_id": "482a102bcd80a2ec",
+   "pages": 17,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAUPF1689079390458.pdf"
+  },
+  "sep_2023": {
+   "doc_id": "fe8bfd11b4f01f85",
+   "pages": 22,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAUPF1697174623450.pdf"
+  },
+  "jun_2024": {
+   "doc_id": "bba799b1121be64c",
+   "pages": 26,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAP05252022120502-110111536412024.pdf"
+  },
+  "dec_2024": {
+   "doc_id": "25145d09ce81fd15",
+   "pages": 24,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAP05252022120502-101101204522025.pdf"
+  },
+  "mar_2025": {
+   "doc_id": "93aed199f53910be",
+   "pages": 27,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAP05252022120502-104131551372025.pdf"
+  },
+  "sept_2024": {
+   "doc_id": "94a422c0bb9abb02",
+   "pages": 24,
+   "url": "https://rera.bihar.gov.in/Progress_Doc/RERAP05252022120502-110101439182024.pdf"
+  }
+ },
+ "expected_r4": {
+  "flags": [
+   {
+    "block": "C",
+    "from": "45",
+    "item": 14,
+    "refs": [
+     "25145d09ce81fd15 p7",
+     "93aed199f53910be p7"
+    ],
+    "to": "40"
+   }
+  ],
+  "must_not_flag": [
+   "Block B-2 Pile Foundation 100 to 10 (Mar 2025 p6 says 100)",
+   "Block B-2 Stilt Floor (Wing A) 100 to 70 (Mar 2025 p6 says 100)",
+   "Block B-2 7th Slabs (Wing B) 100 to 70 (Mar 2025 p6 says 100)",
+   "Staircases 30 (Sept 2024 B-2 p6) to 10 (Dec 2024 Block E p9): different blocks"
+  ]
+ },
+ "expected_r7": {
+  "gap_inr": {
+   "jun_2023": "26193662.02",
+   "sep_2023": "-344568423.69",
+   "jun_2024": 54549499,
+   "dec_2024": 106440651,
+   "mar_2025": 188274320,
+   "sept_2024": 98714666
+  },
+  "rule": "net_balance minus (cumulative_received minus cumulative_spent) is large in every quarter; one LOW flag with six page refs (p10 of each 2023 doc, p11 of the June 2024 doc, p11 of each later doc), worded as a question to the builder or RERA"
+ },
+ "money_identities_that_hold": [
+  "cumulative_received(sep_2023) = cumulative_received(jun_2023) + received_this_quarter(sep_2023)  [30459767.69 + 10783612 = 41243379.69]",
+  "cumulative_received(dec_2024) = cumulative_received(sept_2024) + received_this_quarter(dec_2024)  [296633535 + 109241442 = 405874977]",
+  "cumulative_received(mar_2025) = cumulative_received(dec_2024) + received_this_quarter(mar_2025)  [405874977 + 86086438 = 491961415]",
+  "cumulative_spent(mar_2025) = cumulative_spent(dec_2024) + spent_this_quarter(mar_2025)  [399226445 + 149174357 = 548400802]"
+ ],
+ "money_page_11_inr": {
+  "jun_2023": {
+   "cumulative_received": "30459767.69",
+   "cumulative_spent": 52948388,
+   "estimated_total_cost_lakh": 7594,
+   "net_balance": "3705041.71",
+   "received_this_quarter": 4526496,
+   "spent_this_quarter": 10348388
+  },
+  "sep_2023": {
+   "cumulative_received": "41243379.69",
+   "cumulative_spent": 64674004,
+   "estimated_total_cost_lakh": 7594,
+   "net_balance": 3191952,
+   "received_this_quarter": 10783612,
+   "spent_this_quarter": 11725616
+  },
+  "jun_2024": {
+   "cumulative_received": 200295610,
+   "cumulative_spent": 221910102,
+   "estimated_total_cost_lakh": 9933,
+   "net_balance": 32935007,
+   "received_this_quarter": 77240920,
+   "spent_this_quarter": 82858205
+  },
+  "dec_2024": {
+   "cumulative_received": 405874977,
+   "cumulative_spent": 399226445,
+   "estimated_total_cost_lakh": 9933,
+   "net_balance": 113089183,
+   "received_this_quarter": 109241442,
+   "spent_this_quarter": 118170250
+  },
+  "mar_2025": {
+   "cumulative_received": 491961415,
+   "cumulative_spent": 548400802,
+   "estimated_total_cost_lakh": 9933,
+   "net_balance": 131834933,
+   "received_this_quarter": 86086438,
+   "spent_this_quarter": 149174357
+  },
+  "sept_2024": {
+   "cumulative_received": 296633535,
+   "cumulative_spent": 281056195,
+   "estimated_total_cost_lakh": 9933,
+   "net_balance": 114292006,
+   "received_this_quarter": 96337925,
+   "spent_this_quarter": 59146093
+  }
+ }
+}

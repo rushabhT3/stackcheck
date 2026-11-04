@@ -1,0 +1,277 @@
+{
+  "doc_id": "b22e965724dc6f43",
+  "project_reg_no": null,
+  "project_name": null,
+  "promoter_name": null,
+  "state": null,
+  "quarter_end": "2025-03-31",
+  "filed_on": "2025-04-13",
+  "blocks": [
+    {
+      "block_label": "MAIN",
+      "floors_above_ground_sanctioned": 4,
+      "slabs_claimed_count": 3,
+      "slabs_claimed_percent": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    }
+  ],
+  "activities": [
+    {
+      "name": "1 Excavation (if any)",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "2 Basements (if any)",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "3 Podiums (if any)",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "4 Plinth",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "5 Stilt Floor",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "6 Slabs of Super Structure",
+      "percent_done": null,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "7.1 Internal walls,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "7.2 Internal Plaster,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "7.3 Floorings,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "7.4 Doors and Windows within Flats /Premises.",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "8.1 Sanitary Fittings within the Flat/Premises,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "8.2 Electrical Fittings within the Flat/Premises",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "9.1 Staircases,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "9.2 Lifts Wells and Lobbies at each Floor level,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "9.3 Overhead and Underground Water Tanks.",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "10.1 External plumbing and",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "10.2 external plaster,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "10.3 elevation,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "10.4 completion of terraces with waterproofing of the Building/Wing.",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 3
+      }
+    },
+    {
+      "name": "11.1 Installation of Lifts,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "11.2 water pumps,",
+      "percent_done": 100.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "11.3 Fire Fighting Fittings and Equipment as per CFO NOC,",
+      "percent_done": 0.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "11.4 Electrical fittings, Mechanical Equipment, compliance to conditions of environment/CRZ NOC,",
+      "percent_done": 10.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    },
+    {
+      "name": "11.5 Finishing to entrance lobby/s, plinth protection, paving of areas appurtenant to Building/Wing, Compound Wall and all other requirements as me be required to complete project as per Specifications in Agreement of Sale.",
+      "percent_done": 50.0,
+      "ref": {
+        "doc_id": "b22e965724dc6f43",
+        "page": 4
+      }
+    }
+  ],
+  "financials": {
+    "received_this_quarter": "0",
+    "spent_this_quarter": "1778000",
+    "cumulative_received": "779100",
+    "cumulative_spent": "1778000",
+    "estimated_total_cost": "38561456",
+    "currency_unit": "INR",
+    "unit_overrides": {},
+    "ref": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    }
+  },
+  "has_architect_certificate": true,
+  "has_engineer_certificate": true,
+  "has_ca_certificate": true,
+  "photo_section_present": true,
+  "notes": [
+    "Items 8 and 10 disagree: total expenditure till date 1,01,05,126 vs cumulative expenditure 17,78,000; truth uses item 10 (page 6).",
+    "Slabs of super structure is 'Three (3)', a count, while other rows are percentages (page 3).",
+    "CA statement gives total estimated cost 2,08,25,943, Form X gives 3,85,61,456 (pages 6, 22).",
+    "Photo stamps read 04/06/2025; day and month order is ambiguous, and the filing is signed 13/04/2025 (pages 9-13, 8).",
+    "Two pairs of identical photos are filed in the same report (pages 9-13)."
+  ],
+  "refs": {
+    "quarter_end": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 1
+    },
+    "filed_on": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 8
+    },
+    "blocks": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "activities": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 3
+    },
+    "financials": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    },
+    "has_architect_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 14
+    },
+    "has_engineer_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 17
+    },
+    "has_ca_certificate": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 20
+    },
+    "photo_section_present": {
+      "doc_id": "b22e965724dc6f43",
+      "page": 6
+    }
+  }
+}

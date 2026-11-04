@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bench recount &mdash; StackCheck</title>
+<style>
+body { font-family: system-ui, sans-serif; background: #f8fdf9; color: #0f271a;
+  max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+h1 { color: #0b5a34; font-size: 1.4rem; }
+img { max-width: 100%; max-height: 60vh; border: 1px solid #d9eadf; border-radius: 12px; background: #fff; }
+.row { margin: 0.8rem 0; }
+label { display: block; margin: 0.4rem 0; }
+input[type="number"] { font-size: 1.2rem; width: 6rem; padding: 0.3rem; }
+button { background: #0f7a45; color: #fff; border: 0; border-radius: 999px;
+  padding: 0.6rem 1.4rem; font-size: 1rem; margin-right: 0.5rem; }
+button:disabled { opacity: 0.4; }
+.meta { color: #3a5a45; }
+</style>
+</head>
+<body>
+<h1>Bench recount</h1>
+<p class="meta">Count the visible floors in each photo. Tick "can't tell" when the photo
+cannot be counted. Nothing here shows the earlier count.</p>
+<div class="row">
+<label>Your name (counted_by) <input id="who" type="text" autocomplete="name"></label>
+<label>Date (counted_on) <input id="when" type="date"></label>
+</div>
+<p class="meta" id="progress"></p>
+<img id="photo" alt="bench photo to count">
+<div class="row">
+<label>Floors <input id="floors" type="number" min="0" max="200"></label>
+<label><input id="cannot_tell" type="checkbox"> can't tell</label>
+</div>
+<div class="row">
+<button id="prev">Back</button>
+<button id="next">Next</button>
+<button id="download">Download labels_human.csv</button>
+</div>
+<script>
+const files = ["images/b01.jpg", "images/b02.jpg", "images/b03.jpg", "images/b11.jpg", "images/b12.jpg", "images/b14.jpg", "images/b15.jpg", "images/b19.jpg", "images/b30.jpg", "images/b33.jpg", "images/b41.jpg", "images/b45.jpg", "images/b49.jpg", "images/b51.jpg", "images/b52.jpg", "images/b54.jpg", "images/b55.jpg", "images/b62.jpg", "images/b63.jpg", "images/b64.jpg", "images/b67.jpg", "images/b68.jpg", "images/b69.jpg", "images/b70.jpg", "images/b71.jpg", "sheets/V01.png", "sheets/V02.png", "sheets/V03.png", "sheets/V05.png", "sheets/V07.png", "sheets/V08.png"];
+const answers = files.map((f) => ({image_id: f, floors: "", cannot_tell: ""}));
+let i = 0;
+const img = document.getElementById("photo");
+const num = document.getElementById("floors");
+const cant = document.getElementById("cannot_tell");
+const prog = document.getElementById("progress");
+function show() {
+  img.src = files[i];
+  num.value = answers[i].floors;
+  cant.checked = answers[i].cannot_tell === "yes";
+  prog.textContent = (i + 1) + " of " + files.length;
+  document.getElementById("prev").disabled = i === 0;
+  document.getElementById("next").disabled = i === files.length - 1;
+}
+function save() {
+  answers[i].floors = num.value;
+  answers[i].cannot_tell = cant.checked ? "yes" : "";
+}
+document.getElementById("prev").onclick = () => { save(); if (i > 0) i--; show(); };
+document.getElementById("next").onclick = () => { save(); if (i < files.length - 1) i++; show(); };
+document.getElementById("download").onclick = () => {
+  save();
+  const who = document.getElementById("who").value;
+  const when = document.getElementById("when").value;
+  let csv = "image_id,floors,cannot_tell,counted_by,counted_on\n";
+  for (const a of answers) {
+    csv += [a.image_id, a.floors, a.cannot_tell, who, when].map((v) =>
+      /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v).join(",") + "\n";
+  }
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type: "text/csv"}));
+  a.download = "labels_human.csv";
+  a.click();
+};
+show();
+</script>
+</body>
+</html>

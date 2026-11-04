@@ -1,0 +1,1432 @@
+/* StackCheck app.css — visual system ported from stackcheck-frontend-source-reference.
+ * Reference source of truth: stackcheck-frontend-source-reference/src/index.css (159 lines,
+ * read fully) plus component class evidence in prior results 5/7 (ui.tsx, Chrome.tsx,
+ * FindingCard.tsx, ReportParts.tsx, Charts.tsx, StartView.tsx).
+ * Every selector our Svelte markup uses is kept (same class names); all values are the
+ * reference tokens below. No new dependencies: Hanken/JetBrains stacks fall back to the
+ * already-installed Plus Jakarta Sans / system mono until the owner approves the 2 pkgs. */
+
+:root {
+  color-scheme: light;
+
+  /* Reference @theme tokens (ref src/index.css:32-49). */
+  --color-paper: #f3efe5;
+  --color-paper-2: #ebe6d6;
+  --color-card: #fbf9f3;
+  --color-ink: #0b1510;
+  --color-forest: #08241a;
+  --color-forest-2: #0e3a29;
+  --color-forest-3: #14513a;
+  --color-lime: #d7ff44;
+  --color-flag: #ff4a2b;
+  --color-amber: #f2a516;
+  --color-ok: #17a05d;
+  --color-muted: #5a665d;
+  --color-line: #d5cebb;
+
+  /* Reference extras (ref ui.tsx, ReportParts.tsx, index.css). */
+  --color-cant: #7a4f00;
+  --color-flag-soft: #ff9b88;
+  --color-medium: #ff8a4d;
+  --color-placeholder: #8b948c;
+  --color-axis: #6a746c;
+  --color-field-focus: #fffef8;
+
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Hanken Grotesk Variable", "Plus Jakarta Sans Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Compat aliases: old names our markup/CSS used, now pointing at reference tokens. */
+  --bg: var(--color-paper);
+  --wash: var(--color-paper-2);
+  --wash-alt: var(--color-paper-2);
+  --wash-glow: var(--color-paper-2);
+  --input-focus-bg: var(--color-field-focus);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --muted-2: var(--color-muted);
+  --line: var(--color-line);
+  --brand: var(--color-forest-3);
+  --brand-deep: var(--color-forest);
+  --brand-ink: #fff;
+  --ok: var(--color-ok);
+  --flag: var(--color-flag);
+  --unsure: var(--color-cant);
+  --focus: var(--color-forest-3);
+  --focus-ring: rgb(215 255 68 / 0.55);
+  --serif: var(--font-display);
+  --sans: var(--font-sans);
+  --mono: var(--font-mono);
+  --radius-card: 22px;
+  --radius-hero: 28px;
+  --radius-pill: 999px;
+  --shadow-card: 5px 5px 0 0 var(--color-ink);
+  --shadow-lift: 6px 6px 0 0 var(--color-ink);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-lime);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest-3);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.on-dark :focus-visible,
+.site-header :focus-visible,
+.site-footer :focus-visible,
+.banner :focus-visible,
+.trace :focus-visible {
+  outline-color: var(--color-lime);
+}
+
+/* Reference type utilities (ref index.css:84-92). The ::before bar emulates the
+ * Eyebrow component's 24px rule for our plain <span class="eyebrow"> markup. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-forest-3);
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: currentcolor;
+  flex: none;
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-variation-settings: "wght" 380;
+}
+
+.display em {
+  font-style: italic;
+  font-variation-settings: "wght" 300;
+}
+
+/* Reference surfaces (ref index.css:94-117). */
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(215 255 68 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(215 255 68 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgb(8 36 26 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(8 36 26 / 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.stamp-shadow {
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+/* Reference buttons (ref index.css:119-135). Plain <button> is themed identically
+ * further below so every markup variant matches. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-lime);
+  color: var(--color-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+.btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.btn-ghost {
+  background: transparent;
+  box-shadow: none;
+  min-height: 2.75rem;
+  padding: 0 1.2rem;
+  font-size: 0.88rem;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  box-shadow: none;
+  transform: none;
+}
+
+.on-dark .btn-ghost {
+  border-color: rgb(255 255 255 / 0.35);
+  color: #fff;
+}
+
+.on-dark .btn-ghost:hover:not(:disabled) {
+  background: var(--color-lime);
+  color: var(--color-ink);
+  border-color: var(--color-lime);
+}
+
+/* Reference field + link (ref index.css:137-146). */
+.field {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: #fff;
+  border: 2px solid var(--color-ink);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  transition: box-shadow 160ms ease, background 160ms ease;
+}
+
+.field::placeholder {
+  color: var(--color-placeholder);
+}
+
+.field:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 0 var(--color-lime), 4px 4px 0 2px var(--color-ink);
+  background: var(--color-field-focus);
+}
+
+.link-u {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-lime);
+  font-weight: 600;
+  transition: text-decoration-color 160ms;
+}
+
+.link-u:hover {
+  text-decoration-color: var(--color-forest-3);
+}
+
+/* Back navigation (result pages → start). A plain hash anchor so the router
+ * handles it via hashchange; native :focus-visible styles apply. */
+.back-row {
+  margin: 0 0 1.25rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.back-link:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.on-dark .back-link {
+  border-color: rgb(255 255 255 / 0.35);
+  color: #fff;
+}
+
+.on-dark .back-link:hover {
+  background: var(--color-lime);
+  color: var(--color-ink);
+  border-color: var(--color-lime);
+}
+
+/* Reference chart tokens (ref index.css:148-153). Data-series colors follow below. */
+.chart text {
+  font-family: var(--font-mono);
+}
+
+.chart .axis {
+  stroke: var(--color-ink);
+  stroke-width: 1.5;
+}
+
+.chart .grid {
+  stroke: rgb(8 36 26 / 0.12);
+  stroke-dasharray: 2 5;
+}
+
+.chart .axis-label {
+  fill: var(--color-muted);
+  font-size: 11px;
+}
+
+.chart .value-label {
+  fill: var(--color-ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* Reference motion (ref index.css:51-66) + entrance curves (ref ui.tsx:12). */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(215 255 68 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgb(215 255 68 / 0);
+  }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Layout: sticky footer column, reference container (ref Chrome.tsx:61). */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 0 4rem;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+section {
+  scroll-margin-top: 1.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 50;
+  background: var(--color-lime);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 0 12px 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 150ms ease-out;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  color: var(--color-ink);
+}
+
+/* Header: dark forest band like the reference start route (ref Chrome.tsx:52-82).
+ * Single style for all routes — our markup carries no route class. */
+.site-header {
+  position: relative;
+  z-index: 30;
+  background: var(--color-forest);
+  color: #fff;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 2rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-variation-settings: "wght" 600;
+  letter-spacing: -0.035em;
+}
+
+.brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Logo chip (ref Chrome.tsx:8-16): lime rounded square with the stack glyph. */
+.brand a::before {
+  content: "";
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
+  border-radius: 10px;
+  border: 2px solid var(--color-lime);
+  background-color: var(--color-lime);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b1510' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M4 20h16M6 16h12M8 12h8M10 8h4'/></svg>");
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 160ms ease;
+}
+
+.brand a:hover::before {
+  transform: rotate(-6deg);
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.25rem 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: rgb(255 255 255 / 0.75);
+  text-decoration: none;
+  padding: 0.2rem 0.25rem;
+  transition: color 160ms ease;
+}
+
+.site-nav a:hover {
+  color: var(--color-lime);
+}
+
+/* Last nav item is always the accuracy link: lime pill (ref Chrome.tsx:72-79). */
+.site-nav a:last-child {
+  border: 2px solid var(--color-lime);
+  border-radius: 999px;
+  color: var(--color-lime);
+  font-weight: 700;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  margin-left: 0.25rem;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.site-nav a:last-child:hover {
+  background: var(--color-lime);
+  color: var(--color-ink);
+}
+
+/* Footer: dark forest with grid glow (ref Chrome.tsx:86-103). */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-forest);
+  color: #fff;
+  background-image:
+    linear-gradient(rgb(215 255 68 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(215 255 68 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  margin-top: 6rem;
+  padding: 3.5rem 0;
+  font-size: 0.88rem;
+}
+
+.site-footer .wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem 2rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* "A gap is a question…" line renders as the display statement. */
+.site-footer p:nth-child(2) {
+  flex: 1 1 100%;
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-variation-settings: "wght" 380;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.02;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.site-footer p:nth-child(1),
+.site-footer p:nth-child(3) {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgb(255 255 255 / 0.6);
+}
+
+.site-footer p:nth-child(1) {
+  margin-right: auto;
+}
+
+.site-footer a {
+  color: var(--color-lime);
+  text-decoration: underline;
+  text-decoration-color: rgb(215 255 68 / 0.4);
+  text-underline-offset: 4px;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration-color: var(--color-lime);
+}
+
+/* Dead legacy blocks (hero, how, form-card, dropzone, samples, progress, steps,
+ * skeleton) were removed: the views now use their own scoped classes. Kept
+ * keyframes (float, pulse-ring, rise) are still referenced by live selectors. */
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  min-height: 44px;
+  font-size: 0.95rem;
+}
+
+.check-row input[type="checkbox"] {
+  width: 1.375rem;
+  height: 1.375rem;
+  flex: none;
+  accent-color: var(--color-forest-3);
+}
+
+.check-row input[type="checkbox"]:focus-visible,
+.toggle input:focus-visible {
+  outline: 2px solid var(--color-forest-3);
+  outline-offset: 2px;
+}
+
+input[type="text"],
+textarea {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  min-height: 3rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--color-ink);
+  width: 100%;
+  transition: box-shadow 160ms ease, background 160ms ease;
+}
+
+textarea {
+  min-height: 7.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--color-placeholder);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-ink);
+  background: var(--color-field-focus);
+  box-shadow: 4px 4px 0 0 var(--color-lime), 4px 4px 0 2px var(--color-ink);
+}
+
+/* Primary actions: lime pill with stamp shadow (ref .btn). */
+button {
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.98rem;
+  min-height: 3.25rem;
+  min-width: 12.5rem;
+  width: 100%;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-lime);
+  color: var(--color-ink);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.ghost-btn {
+  background: transparent;
+  box-shadow: none;
+  min-height: 2.75rem;
+  min-width: 0;
+  width: auto;
+  padding: 0 1.2rem;
+  font-size: 0.88rem;
+}
+
+.ghost-btn:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  box-shadow: none;
+  transform: none;
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 0;
+}
+
+.copy-row .copy-btn {
+  min-height: 2.75rem;
+  min-width: 0;
+  width: auto;
+  padding: 0.55rem 1.4rem;
+}
+
+.photo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.25rem 0;
+}
+
+.photo {
+  margin: 1rem 0;
+}
+
+.photo img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--color-ink);
+  border-radius: 12px;
+  background: var(--color-paper);
+}
+
+.photo-thumb {
+  width: 7.5rem;
+  height: 10rem;
+  object-fit: cover;
+  border: 2px solid var(--color-ink);
+  border-radius: 12px;
+  background: var(--color-paper);
+}
+
+.r2-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.r2-photo {
+  margin: 0;
+  border-radius: 16px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-paper);
+  padding: 0.75rem;
+}
+
+.r2-photo .photo-thumb {
+  width: 100%;
+  height: 13rem;
+}
+
+.r2-photo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+/* Page pills (ref FindingCard.tsx:28-36). */
+.r2-photo figcaption a,
+blockquote a {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-card);
+  padding: 0.125rem 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: background 160ms ease;
+}
+
+.r2-photo figcaption a:hover,
+blockquote a:hover {
+  background: var(--color-lime);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--color-ink);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 1rem 0 0.5rem;
+  color: var(--color-ink);
+}
+
+.meta {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+a {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-lime);
+  transition: text-decoration-color 160ms ease;
+}
+
+a:hover {
+  text-decoration-color: var(--color-forest-3);
+}
+
+/* Finding + metric cards (ref FindingCard.tsx:40-51). The rail tone follows the
+ * status tag inside via :has; cards without a tag show no rail. */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  border-radius: 22px;
+  box-shadow: 5px 5px 0 0 var(--color-ink);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin: 1.25rem 0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0.625rem;
+  background: transparent;
+}
+
+.card:has(.tag)::before {
+  background: var(--color-amber);
+}
+
+.card:has(.tag.flag)::before {
+  background: var(--color-flag);
+}
+
+.card:has(.tag.ok)::before {
+  background: var(--color-ok);
+}
+
+.card-head {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rule {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.explain {
+  margin: 0.75rem 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgb(11 21 16 / 0.8);
+  max-width: 48rem;
+}
+
+.evidence {
+  list-style: none;
+  padding: 1.25rem 0 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 1rem;
+  border-top: 2px dashed rgb(11 21 16 / 0.2);
+}
+
+blockquote {
+  border-left: 4px solid var(--color-forest-3);
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  background: var(--color-paper);
+  border-radius: 0 12px 12px 0;
+}
+
+ul.plain {
+  list-style: none;
+  padding: 0;
+}
+
+ul.plain li {
+  margin: 0.5rem 0;
+}
+
+/* Can't-verify dashed amber cards (ref ReportParts.tsx:72-82). */
+section[aria-labelledby="cant-verify-heading"] .plain {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+section[aria-labelledby="cant-verify-heading"] .plain li {
+  border: 2px dashed var(--color-amber);
+  background: rgb(242 165 22 / 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin: 0;
+}
+
+section[aria-labelledby="cant-verify-heading"] .plain li strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: -0.035em;
+}
+
+/* Status pills (ref ui.tsx:36-51). */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.75rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tag.ok {
+  color: var(--color-ink);
+  background: rgb(23 160 93 / 0.16);
+  border-color: var(--color-ok);
+}
+
+.tag.flag {
+  color: var(--color-ink);
+  background: rgb(255 74 43 / 0.14);
+  border-color: var(--color-flag);
+}
+
+.tag.unsure {
+  color: var(--color-cant);
+  background: rgb(242 165 22 / 0.2);
+  border-color: var(--color-amber);
+}
+
+/* Verdict panel: dark forest card with grid + verdict-tinted glow
+ * (ref ReportParts.tsx:5-60). Counts order matches the reference stats row. */
+.banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-forest);
+  color: #fff;
+  border: 2px solid var(--color-ink);
+  border-radius: 28px;
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+  padding: 2.5rem 1.75rem;
+  margin: 1.5rem 0;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(215 255 68 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(215 255 68 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: -8rem;
+  right: -8rem;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(4rem);
+  background: radial-gradient(circle, #17a05d 0%, transparent 65%);
+}
+
+.banner.is-flag::after {
+  background: radial-gradient(circle, #ff4a2b 0%, transparent 65%);
+}
+
+.banner.is-ok::after {
+  background: radial-gradient(circle, #17a05d 0%, transparent 65%);
+}
+
+.banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  margin: 0;
+  max-width: 64rem;
+  font-size: clamp(2rem, 4.8vw, 4.2rem);
+  line-height: 1.02;
+  color: #fff;
+}
+
+.counts {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+}
+
+.counts li {
+  border-top: 2px solid rgb(255 255 255 / 0.2);
+  padding-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.7);
+}
+
+.counts strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  font-size: clamp(3.4rem, 7vw, 5.6rem);
+  line-height: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.counts li:nth-child(1) strong {
+  color: var(--color-flag);
+}
+
+.counts li:nth-child(2) strong {
+  color: var(--color-medium);
+}
+
+.counts li:nth-child(3) strong {
+  color: var(--color-amber);
+}
+
+.counts li:nth-child(4) strong {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.counts li:nth-child(5) strong {
+  color: var(--color-lime);
+}
+
+.cost {
+  color: rgb(255 255 255 / 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin: 2.5rem 0 0;
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 500;
+}
+
+.toggle input {
+  width: 1.375rem;
+  height: 1.375rem;
+  flex: none;
+  accent-color: var(--color-forest-3);
+}
+
+.legend {
+  display: flex;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.6rem;
+  border-radius: 2px;
+  background: var(--color-forest-3);
+}
+
+.dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+}
+
+.claimed-dot {
+  background: var(--color-flag);
+}
+
+.chart {
+  margin: 1.5rem 0;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  border-radius: 22px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.chart figcaption {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+}
+
+.scroll-hint {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  margin: 0.5rem 0 0;
+}
+
+.chart svg {
+  width: 100%;
+  min-width: 30rem;
+  height: auto;
+  display: block;
+}
+
+/* Chart data series (ref Charts.tsx:91-93,106-108,114,207-218). */
+.chart .range {
+  fill: var(--color-lime);
+  stroke: var(--color-ink);
+  stroke-width: 2;
+  rx: 3px;
+}
+
+.chart .claimed {
+  fill: var(--color-flag);
+  stroke: var(--color-ink);
+  stroke-width: 2;
+}
+
+.chart .nodata {
+  fill: none;
+  stroke: var(--color-amber);
+  stroke-width: 2;
+}
+
+.chart .line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Money is a dotted ink line with triangles; work progress is a solid forest
+ * line with lime-ringed dots. Hue plus shape plus line style, not hue alone. */
+.chart .spent {
+  stroke: var(--color-ink);
+  stroke-dasharray: 0.5 7;
+}
+
+.chart .progress {
+  stroke: var(--color-forest-3);
+}
+
+.chart .spent-dot {
+  fill: var(--color-ink);
+}
+
+.chart .progress-dot {
+  fill: var(--color-forest-3);
+  stroke: var(--color-lime);
+  stroke-width: 2;
+}
+
+.chart .area-progress {
+  fill: var(--color-lime);
+  opacity: 0.4;
+  stroke: none;
+}
+
+.chart .line-key {
+  display: inline-block;
+  width: 1.5rem;
+}
+
+.chart .spent-key {
+  border-top: 3px dotted var(--color-ink);
+  height: 0;
+}
+
+.chart .progress-key {
+  background: var(--color-forest-3);
+  height: 0.25rem;
+  border-radius: 2px;
+}
+
+.range-swatch {
+  background: var(--color-lime);
+  border: 2px solid var(--color-ink);
+  height: 0.75rem;
+  opacity: 1;
+}
+
+.square {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2px;
+}
+
+.nodata-square {
+  background: transparent;
+  border: 2px solid var(--color-amber);
+}
+
+/* Investigator trace: dark panel (ref ReportParts.tsx:88-117). */
+.trace {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.trace summary {
+  display: flex;
+  min-height: 4rem;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.trace summary::-webkit-details-marker {
+  display: none;
+}
+
+.trace summary::before {
+  content: "⌘";
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--color-lime);
+  color: var(--color-ink);
+  font-size: 1rem;
+}
+
+.trace summary::after {
+  content: "+";
+  color: var(--color-lime);
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.trace[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.trace ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.trace li {
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+  padding: 1.25rem 1.5rem;
+}
+
+.trace > p {
+  margin: 0;
+  padding: 0 1.5rem 1.5rem;
+  color: rgb(255 255 255 / 0.7);
+}
+
+details:not(.trace) {
+  border: 2px solid var(--color-ink);
+  border-radius: 22px;
+  background: var(--color-card);
+  margin: 1rem 0;
+  padding: 0 1.25rem 1.25rem;
+}
+
+details:not(.trace) summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1rem 0;
+  min-height: 2.75rem;
+}
+
+.disclaimer {
+  border-top: 1px solid var(--color-line);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* No dark mode on purpose: the paper theme carries the contrast budget, and the
+ * dark forest panels are deliberate accents — not a second palette. */
+
+/* Breakpoints follow the reference (Tailwind v4 defaults, sm/md/lg only). */
+@media (min-width: 40rem) {
+  .wrap {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .site-nav {
+    width: auto;
+  }
+
+  button {
+    width: auto;
+  }
+
+  .banner {
+    padding: 3.5rem 3rem;
+  }
+
+  .counts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .r2-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .card {
+    padding: 2rem 2rem 2rem 2.5rem;
+  }
+
+  .chart {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .counts {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
