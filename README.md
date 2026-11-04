@@ -45,7 +45,7 @@ A bounded agent investigates unclear photo findings (at most 3 steps: another ph
 
 - **Muse Spark 1.3** — reads filings into structured facts; contributor tier for public filings, standard tier for anything a user uploads (uploads never touch contributor models).
 - **SAM 3.1** — floor-row detection on elevation photos (Meta API only).
-- **Muse Spark Open** — the reading step on Baseten (`meta-models/muse-spark-open-1026`, the default) with Fireworks as the measured fallback.
+- **Muse Spark Open** — the reading step also runs on Baseten (`meta-models/muse-spark-open-1026`) and Fireworks, measured against the Meta default.
 - **Muse Code** — built this repo during the hackathon.
 
 ## Architecture
@@ -71,7 +71,7 @@ graph LR
 | Layer | Technology | Why |
 |---|---|---|
 | API | FastAPI + Uvicorn | Async endpoints serving the Svelte app and the check pipeline |
-| Reading | Muse Spark 1.3 / Muse Spark Open (Baseten, Fireworks fallback) | Filings into structured facts with page numbers |
+| Reading | Muse Spark 1.3 / Muse Spark Open (Meta default; Baseten, Fireworks measured) | Filings into structured facts with page numbers |
 | Vision | SAM 3.1 + vision count | Two independent floor counts that must agree |
 | PDF + images | PyMuPDF, Pillow, NumPy | Text/photo extraction, overlays, hashing |
 | Frontend | Svelte 5, Vite, TypeScript | Start, report and accuracy views |
@@ -87,7 +87,7 @@ Full table in `docs/kpi_snapshot.md`, refreshed by `scripts/kpi_report.py`:
 - Filing extraction: 99.1% of fields correct (113/114) against 4 hand-labelled filings.
 - Photo facts: kind right on 29/30 photos (96.7%), storey counts 5/5; no unambiguous date-stamp case, so that score is no-data by design.
 - Floor counting on 25 openly licensed benchmark photos: 48% confident counts (100% within 1 floor, 0% confidently wrong), 24% estimates, 28% can't-tell.
-- Providers on the same filings: Meta 98.2% at $0.0015/filing, Baseten 99.1% at $0.0454, Fireworks 99.1% at $0.0547 — Baseten became the default.
+- Providers on the same filings: Meta 98.2% at $0.0015/filing, Baseten 99.1% at $0.0454, Fireworks 99.1% at $0.0547 — Meta stays the default.
 - Cost per project check: at most $0.2750 observed.
 
 ## Run it yourself
